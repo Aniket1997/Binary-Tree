@@ -25,20 +25,20 @@ class FullBinaryTree {
             return;
         }
 
-        Node current = root;
-        while (current != null) {
-            if (data < current.data) {
-                if (current.left == null) {
-                    current.left = newNode;
+        Node currentNode = root;
+        while (currentNode != null) {
+            if (data < currentNode.data) {
+                if (currentNode.left == null) {
+                    currentNode.left = newNode;
                     return;
                 }
-                current = current.left;
+                currentNode = currentNode.left;
             } else {
-                if (current.right == null) {
-                    current.right = newNode;
+                if (currentNode.right == null) {
+                    currentNode.right = newNode;
                     return;
                 }
-                current = current.right;
+                currentNode = currentNode.right;
             }
         }
     }
