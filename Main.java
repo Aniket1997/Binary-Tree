@@ -60,13 +60,14 @@ class FullBinaryTree {
         return false;
     }
 
-    public static void preOrder(Node root) {
+    
+    public static void InOrder(Node root) {
         if (root == null) {
             return;
         }
+        InOrder(root.left);
         System.out.print(root.data + " ");
-        preOrder(root.left);
-        preOrder(root.right);
+        InOrder(root.right);
     }
     
     
@@ -95,8 +96,10 @@ public class Main {
             int element = scanner.nextInt();
             binaryTree.insert(element);
         }
-        System.out.print("Pre-order traversal of the binary tree: ");
-        preOrder(binaryTree.root);
+        // System.out.println("Pre-order traversal of the binary tree: ");
+        // PreOrder(binaryTree.root);
+        System.out.println("In-order traversal of the binary tree: ");
+        InOrder(binaryTree.root);
         if (binaryTree.isFullBinaryTree(binaryTree.root)) {
             System.out.println("The binary tree is a full binary tree");
         } else {
