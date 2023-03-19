@@ -81,6 +81,18 @@ public static void PreOrder(Node root)
     PreOrder(root.left);
     PreOrder(root.right);
 }
+public static void PostOrder(Node root)
+{
+    if(root == null)
+    {
+        return;
+    }
+    PostOrder(root.left);
+    PostOrder(root.right);
+    System.out.println(root.data+" ");
+    
+    
+}
 
 public class Main {
     public static void main(String[] args) {
@@ -98,8 +110,10 @@ public class Main {
         }
         // System.out.println("Pre-order traversal of the binary tree: ");
         // PreOrder(binaryTree.root);
-        System.out.println("In-order traversal of the binary tree: ");
-        InOrder(binaryTree.root);
+        System.out.println("Post-order traversal of the binary tree: ");
+        PostOrder(binaryTree.root);
+        // System.out.println("In-order traversal of the binary tree: ");
+        // InOrder(binaryTree.root);
         if (binaryTree.isFullBinaryTree(binaryTree.root)) {
             System.out.println("The binary tree is a full binary tree");
         } else {
