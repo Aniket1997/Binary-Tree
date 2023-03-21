@@ -157,6 +157,21 @@ public static int countOfNodes(Node root) {
     
 }
 
+public static int sumOfNodes(Node root) {
+    if(root == null)
+    {
+        return 0;
+    }else{
+     int sumOfLeftNode = sumOfNodes(root.left);
+     int sumOfrighttNode = countOfNodes(root.right);
+
+     return sumOfLeftNode+sumOfrighttNode+root.data;
+    }
+    
+
+    
+}
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -183,8 +198,10 @@ public class Main {
             System.out.println("The binary tree is not a full binary tree");
         }
 
-        System.out.println("Level Order Traversal:");
-        LevelOrder(binaryTree.root);
+        //System.out.println("Level Order Traversal:");
+        //LevelOrder(binaryTree.root);
+        System.out.println("Sum of Nodes is");
+        sumOfNodes(binaryTree.root);
     }
 }
 }
