@@ -1,3 +1,6 @@
+import java.lang.foreign.Addressable;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 class Node {
@@ -94,6 +97,42 @@ public static void PostOrder(Node root)
     
 }
 
+public static void LevelOrder(Node root)
+{
+    
+Queue<Node> q = new LinkedList<>() ;
+    q.add(root);
+    q.add(null);
+
+    while(!q.isEmpty())
+    {
+        Node currentNode = q.remove();
+        if(currentNode == null)
+        {
+           System.out.println();
+           if(q.isEmpty())
+           {
+             break;
+           }
+           else{
+             q.add(null);
+           }
+        }else{
+           System.out.println(currentNode.data+" ");
+           if(currentNode.left != null)
+           {
+               q.add(currentNode.left);
+           }
+           else
+           {
+               q.add(currentNode.right);
+           }
+        }
+    }
+    }
+    
+
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -119,6 +158,9 @@ public class Main {
         } else {
             System.out.println("The binary tree is not a full binary tree");
         }
+
+        System.out.println("Level Order Traversal:");
+        LevelOrder(binaryTree.root);
     }
 }
 }
