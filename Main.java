@@ -131,7 +131,16 @@ Queue<Node> q = new LinkedList<>() ;
     }
     }
     
-
+public static int HeightOfBinaryTree(Node root)
+{
+    if(root == null)
+    {
+        return 0;
+    }
+    else{
+        return 1+Math.max(HeightOfBinaryTree(root.left),HeightOfBinaryTree(root.right));
+    }
+}
 
 public class Main {
     public static void main(String[] args) {
