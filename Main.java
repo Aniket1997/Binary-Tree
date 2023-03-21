@@ -142,6 +142,21 @@ public static int HeightOfBinaryTree(Node root)
     }
 }
 
+public static int countOfNodes(Node root) {
+    if(root == null)
+    {
+        return 0;
+    }else{
+     int countOfLeftNode = countOfNodes(root.left);
+     int countOfrighttNode = countOfNodes(root.right);
+
+     return countOfLeftNode+countOfrighttNode+1;
+    }
+    
+
+    
+}
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
