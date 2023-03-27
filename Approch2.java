@@ -222,7 +222,7 @@ public class Approch2 {
 
         // System.out.println("Level Order Traversal:");
         // LevelOrder(binaryTree.root);
-        System.out.print("Diameter of Binary tree : "+diameter(binaryTree.root));
+        System.out.print("Diameter of Binary tree : "+diameter(binaryTree.root).diam);
         ;
     }
 }
